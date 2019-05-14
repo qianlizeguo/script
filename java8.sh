@@ -2,7 +2,7 @@
 
 echo ">>> Checking JAVA8"
 
-if [ ! -d "/usr/local" ]; then
+if [ -d "/usr/local" ]; then
 
     echo ">>> Installing JAVA8"
 
