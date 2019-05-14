@@ -20,11 +20,11 @@ if [ -d "/usr/local" ]; then
         tar xzf jdk-8u141-linux-x64.tar.gz
     fi
 
-    mv jdk1.8.0_141 /etc/local/java8
+    mv jdk1.8.0_141 /usr/local/java8
 
     echo ">>>> start configure"
 
-	echo "JAVA_HOME=/etc/local/java8" >> /etc/profile
+	echo "JAVA_HOME=/usr/local/java8" >> /etc/profile
 	echo "JRE_HOME=\$JAVA_HOME/jre" >> /etc/profile
 	echo "PATH=\$PATH:\$JAVA_HOME/bin" >> /etc/profile
 	echo "CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar" >> /etc/profile
