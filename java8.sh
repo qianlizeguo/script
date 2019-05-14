@@ -17,10 +17,10 @@ if [ -d "/usr/local" ]; then
     fi
 
     if [ ! -d "jdk1.8.0_141" ]; then
-        tar xzf jdk-8u141-linux-i586.tar.gz
+        tar xzf jdk-8u141-linux-x64.tar.gz
     fi
 
-    mv jdk1.8.0_141 /usr/local/java8
+    mv jdk1.8.0_141 /etc/local/java8
 
     echo ">>>> start configure"
 
