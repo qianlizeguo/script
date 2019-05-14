@@ -13,7 +13,7 @@ if [ ! -d "/usr/local" ]; then
     fi
 
     if [ ! -d "apache-maven-3.1.1" ]; then
-        tar xzf jdk-8u141-linux-i586.tar.gz
+        tar xzf apache-maven-3.1.1-bin.tar.gz
     fi
 
     mv apache-maven-3.1.1 /usr/local/maven3
