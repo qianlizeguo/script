@@ -2,7 +2,7 @@
 
 echo ">>> Checking maven"
 
-if [ ! -d "/usr/local" ]; then
+if [ -d "/usr/local" ]; then
 
     echo ">>> Installing maven"
 
