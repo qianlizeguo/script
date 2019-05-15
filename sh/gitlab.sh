@@ -2,7 +2,7 @@
 
 echo ">>> Checking gitlab"
 
-if [ ! -d "/usr/local" ]; then
+if [ -d "/usr/local" ]; then
 
     echo ">>> Installing gitlab"
 
@@ -17,7 +17,7 @@ if [ ! -d "/usr/local" ]; then
 
     echo ">>>> start configure"
 
-	sudo sed -i "s/http:\/\/localhost/http:\/\/od23101284.51mypc.cn/" /etc/gitlab/gitlab.rb
+	sudo sed -i "s/http:\/\/localhost/http:\/\/od23101284.51mypc.cn" /etc/gitlab/gitlab.rb
 
     echo ">>> restart gitlab"
 
