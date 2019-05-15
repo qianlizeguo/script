@@ -4,6 +4,9 @@ echo ">>> 开始启动docker.service "
 
 service docker start
 
+echo ">>> 创建docker网络 "
+docker network create boxNet
+
 echo ">>> 开始启动gitlab "
 docker rm gitlab
 docker run -d  -p 8222:22 \
@@ -22,6 +25,8 @@ docker run --name mysql -d --rm \
             -v /docker/mysql/conf:/etc/mysql/conf.d \
             -v /docker/mysql/data:/var/lib/mysql \
             --privileged=true \
+            --network boxNet \
+            --network-alias mysql \
             -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql
 
 echo ">>>> 启动redis"
@@ -29,5 +34,7 @@ docker rm redis
 docker run --name redis -d \
             -p 6379:6379 \
             -v /docker/redis/data:/data \
+            --network boxNet \
+            --network-alias redis \
             --privileged=true redis \
             redis-server --appendonly yes
